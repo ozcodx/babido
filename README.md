@@ -1,130 +1,193 @@
-# The Babel Library: Ido Section Generator
+# The Babel Library: Generative Linguistics Through Ido
 
-A collaborative linguistic-literary project by **Oscar Bernal** (Systems Engineering graduate, Universidad Tecnológica de Pereira) and **Luis David Cardona** (aspiring graduate in Linguistics, Universidad Tecnológica de Pereira).
+A collaborative computational linguistics research project by **Oscar Eduardo Bernal** (B.Eng. Systems Engineering, Universidad Tecnológica de Pereira) and **Luis David Cardona** (Linguistics, Universidad Tecnológica de Pereira, Colombia).
 
 ---
 
-## 📚 Introduction
+## Abstract
 
-This project is inspired by the short story *La Biblioteca de Babel* (The Library of Babel) by **Jorge Luis Borges**, originally published in 1941. In Borges' story, an infinite library contains every possible combination of characters in every possible book, rendering most of them nonsensical. Yet, hidden among them, lie books of unimaginable clarity, wisdom, and coherence.
+This interdisciplinary research project explores the intersection of computational linguistics, constructed languages, and procedural generation through the lens of Jorge Luis Borges' conceptual framework in *La Biblioteca de Babel* (1941). We propose a systematic approach to generating linguistically valid textual structures within the constraints of the Ido constructed language, employing deterministic algorithms to create reproducible linguistic artifacts that maintain grammatical coherence while exploring the boundaries of meaning construction.
 
-Our goal is to imagine a *structured section* of that mythical library—a wing in which the texts are **not entirely random**, but bound by the constraints of a **constructed language** (specifically, *Ido*—a derivative of Esperanto), **grammatical rules**, and eventually, **semantic meaning**.
+---
+
+## 1. Theoretical Framework
+
+This investigation builds upon Borges' metaphorical infinite library containing all possible textual combinations. Rather than the random combinatorial approach in Borges' conception, we implement a constrained generative system bounded by:
+
+1. The formal grammar of a constructed language (Ido)
+2. Deterministic procedural generation algorithms
+3. Structural linguistics principles
+4. Computational approaches to meaning representation
 
 > "The universe (which others call the Library) is composed of an indefinite and perhaps infinite number of hexagonal galleries…" — *Jorge Luis Borges*
 
----
-
-## 🎯 Project Goals
-
-- **Linguistic Generation**: Generate grammatically correct and human-readable sentences in Ido using predefined grammatical structures and categorized vocabulary.
-- **Procedural Text Construction**: Use pseudo-random algorithms to create deterministic and reproducible "books" or "hexes" without the need to store them physically.
-- **Structural Classification**: Allow classification and referencing of generated structures using hashes or identifiers for modular combination and reuse.
-- **Scalability**: Design a system that can grow naturally as the dictionaries and rules evolve through linguistic study and research.
-- **Semantic Expansion** *(future phase)*: Explore Natural Language Processing (NLP) and Artificial Intelligence techniques to:
-  - Evaluate **semantic coherence** between sentences.
-  - Generate longer texts with **contextual consistency**.
-  - Simulate **cohesive books** with themes, characters, or logical progression.
+Our implementation represents a controlled subset of this conceptual space—a systematically navigable section of the infinite library that produces texts with increasing levels of linguistic validity.
 
 ---
 
-## 🧠 Why Ido?
+## 2. Research Objectives
 
-Ido is a constructed international auxiliary language derived from Esperanto. Its regular grammar and small but expressive vocabulary make it a perfect candidate for computational linguistic projects and experimental generation. Its simplicity allows:
+- **Primary Objective**: Develop a computational framework for generating grammatically well-formed linguistic structures in Ido using procedural algorithms.
 
-- Fast prototyping of grammatical rules.
-- Easier syntax-parsing logic.
-- Broad linguistic accessibility, independent of natural language biases.
+- **Secondary Objectives**:
+  - Formalize a deterministic methodology for reproducible sentence generation
+  - Implement classification mechanisms for structure referencing and combinatorial composition
+  - Develop scalable linguistic rule systems accommodating increased complexity
+  - Evaluate the generated outputs through computational linguistic metrics
+  - Explore semantic coherence within constrained generative parameters
 
-Unlike Esperanto, Ido lacks special characters such as circumflexes (ĉ, ĝ, ĥ, ĵ, ŝ) and other diacritics, using only standard ASCII characters. This characteristic:
-- Eliminates the need for unicode handling and normalization in computational implementations
-- Simplifies character encoding and processing
-- Ensures compatibility across all computing environments and platforms
-- Reduces complexity in pattern matching and text manipulation algorithms
-
-Additionally, Ido's grammar follows strict, fixed rules with virtually no exceptions:
-- All verbs conjugate following the same pattern, without irregular forms
-- Noun pluralization follows a single consistent rule
-- Adjective agreement has clear, unambiguous patterns
-- Word formation through affixes follows predictable rules
-
-These characteristics make Ido an ideal testbed for linguistic experimentation, as its deterministic nature allows for perfect reproducibility and systematic exploration of language structure without the noise of irregularities found in natural languages or even other constructed languages.
+- **Tertiary Objectives** *(future research)*:
+  - Implement semantic validation through NLP techniques
+  - Develop multi-level coherence from sentence to discourse structures
+  - Create methods for thematic consistency across generated text sections
+  - Establish quantitative metrics for evaluating procedurally generated linguistic artifacts
 
 ---
 
-## ⚙️ How It Works
+## 3. Methodological Selection: Ido as a Research Instrument
 
-1. **Word Categories (`words.yaml`)**  
-   Words are organized by grammatical function: nouns, verbs, adverbs, etc.
+Ido, a constructed international auxiliary language derived from Esperanto, offers specific methodological advantages for this linguistic investigation:
 
-2. **Phrase Structures (`structures.yaml`)**  
-   Each phrase structure defines a generative *template* such as:  
-   `{artikoloj?} {adjetivos?} {sustantivos} {verbos} {adverbios?}`  
-   Optional elements are marked using a custom mini-regex syntax.
+### 3.1 Structural Characteristics
 
-3. **Grammar Rules (`grammar.yaml` or Python module)**  
-   This module defines rules for pluralization, verb conjugation, adjective agreement, etc.
+- **Regular Morphology**: Systematic and predictable word formation patterns
+- **Consistent Grammar**: Rule-based structure without exceptions or irregularities
+- **ASCII Compatibility**: Absence of diacritical marks or special characters (unlike Esperanto's circumflexes: ĉ, ĝ, ĥ, ĵ, ŝ)
+- **Simplified Phonology**: Clear grapheme-to-phoneme correspondence
 
-4. **Sentence Generator (`sengen.py`)**  
-   A deterministic generator that uses a seed (like a hash or book address) to generate reproducible sentences based on the rules and structures provided.
+### 3.2 Computational Advantages
 
----
+- **Deterministic Parsing**: Unambiguous tokenization and syntactic analysis
+- **Encoding Efficiency**: No requirement for Unicode normalization or special character handling
+- **Cross-platform Compatibility**: Consistent representation across all computational environments
+- **Algorithm Optimization**: Reduced complexity in pattern matching and text manipulation
 
-## 🧪 Future Directions
+### 3.3 Linguistic Properties
 
-We envision integrating NLP models and semantic parsers to:
-- **Evaluate generated text** for syntactic and semantic cohesion.
-- **Construct entire procedurally generated books** with thematic unity.
-- Use **machine learning classifiers** to tag sentences by tone, genre, or emotion.
+- **Morphological Regularity**: 
+  - Uniform verb conjugation patterns
+  - Systematic noun pluralization
+  - Consistent adjective agreement
+  - Regular derivational morphology
 
-Additionally, future phases may include:
-- A full **graph of interconnected phrases** and topics.
-- Tools for **interactive exploration** of "hexes" within this structured section of Babel.
-- Export formats like PDF or EPUB for generated texts.
+These properties establish Ido as an optimal experimental environment for computational linguistic research, offering a controlled space for investigating language generation without the statistical noise and irregularities inherent in natural languages.
 
 ---
 
-## 📍 Academic Context
+## 4. Implementation Architecture
 
-This project is developed within the context of interdisciplinary research at the **Universidad Tecnológica de Pereira (UTP)** in Colombia, bringing together expertise from the fields of **Systems Engineering** and **Linguistics**. It reflects a shared passion for language, literature, artificial intelligence, and experimental computation.
+The system architecture comprises four primary components:
 
----
+1. **Lexical Database** (`words.yaml`)  
+   Hierarchical categorization of vocabulary by grammatical function and semantic domain, including:
+   - Parts of speech classification
+   - Morphological features
+   - Semantic categorization
 
-## 🔬 Research Justification
+2. **Syntactic Templates** (`structures.yaml`)  
+   Formalized generative structures with optionality markers:  
+   ```
+   {determiner?} {adjective?} {noun} {verb} {adverb?}
+   ```
+   Implemented with a domain-specific notation for structural variation.
 
-This project serves as a foundational experiment in procedural linguistics and computational creativity, merging constructed language theory, linguistic formalism, and systems engineering. By choosing Ido as the base language, we leverage a simplified, regular, and fully ASCII-compatible syntax, making it highly suitable for:
+3. **Morphosyntactic Rules** (`grammar.yaml`)  
+   Formal implementation of:
+   - Inflectional morphology
+   - Agreement systems
+   - Syntactic constraints
+   - Combinatorial restrictions
 
-- Computational processing, parsing, and phrase construction.
-- Rule-based natural language generation (NLG).
-- Cross-linguistic structural modeling.
-
-Unlike Esperanto, which includes accented characters and some irregularities, Ido's consistent morphology and lack of special characters allows deterministic tokenization and grammar rule enforcement, without pre-processing steps or unicode normalization—ideal for algorithmic manipulation and large-scale sentence generation.
-
-### Broader Academic Vision
-
-The long-term goal of this work is to establish a scalable methodology for:
-
-- Designing linguistically valid sections of the Library of Babel.
-- Generating semantic, grammatical and contextually coherent texts using algorithmic rules.
-- Exploring the limits of meaning within constrained symbol spaces (e.g., Ido, Esperanto, Toki Pona, Lojban, or natural languages).
-
-This opens the door to a diverse range of linguistic and computational research topics, such as:
-
-- Formal complexity analysis of sentence structures across languages.
-- Studying combinatorial language saturation: how many meaningful sentences can be generated under specific rules.
-- Development of semantic validation models using AI or symbolic logic.
-- Training AI agents in constructed languages as low-noise environments for testing generalization.
-- Modeling emergent discourse from generative language systems.
-- Building tools to explore or visualize linguistic phase space—all grammatically possible outputs under given constraints.
-
-Ultimately, this is a platform for linguistic experimentation that blends human creativity, literary imagination, and machine logic.
+4. **Generation Engine** (`sengen.py`)  
+   Deterministic procedural generator utilizing cryptographic hashing for:
+   - Reproducible sentence construction
+   - Structural composition
+   - Rule application
+   - Coherence evaluation
 
 ---
 
-## 🧾 References
+## 5. Research Applications
 
-- Borges, Jorge Luis. *Ficciones*. Buenos Aires: Editorial Sur, 1944.
-- [La Biblioteca de Babel — Full Text (English)](https://libraryofbabel.info/Borges.html)
-- UTP Official Website: [https://utp.edu.co](https://utp.edu.co)
-- Ido Language Resources: [https://en.wikipedia.org/wiki/Ido_language](https://en.wikipedia.org/wiki/Ido_language)
+### 5.1 Computational Linguistics
 
---- 
+- Formal language theory exploration
+- Grammar induction methodology
+- Computational creativity models
+- Linguistic complexity metrics
+
+### 5.2 Natural Language Processing
+
+We anticipate future integration of contemporary NLP approaches:
+- Automated assessment of semantic coherence
+- Multi-level text generation with maintained context
+- Coherence modeling across linguistic units
+- Computational stylistics and genre analysis
+
+### 5.3 Experimental Applications
+
+- **Text Corpus Development**: Generation of controlled linguistic datasets
+- **Visualization Tools**: Interface for exploring linguistic possibility spaces
+- **Semantic Networks**: Mapping relationships between generated structures
+- **Linguistic Pattern Analysis**: Statistical evaluation of generative outputs
+
+---
+
+## 6. Research Context
+
+This investigation is conducted within the interdisciplinary research framework at the **Universidad Tecnológica de Pereira (UTP)**, Colombia, integrating methodologies from **Systems Engineering**, **Computational Linguistics**, and **Literary Studies**. The work contributes to emerging scholarship in procedural linguistics, computational creativity, and formal language theory.
+
+---
+
+## 7. Theoretical Significance
+
+This project serves as a foundational experiment in procedural linguistics and computational creativity, merging constructed language theory, linguistic formalism, and systems engineering. By employing Ido as the linguistic substrate, we leverage a simplified, regular, and fully ASCII-compatible syntax, providing methodological advantages for:
+
+- Computational processing, parsing, and phrase construction
+- Rule-based natural language generation (NLG)
+- Cross-linguistic structural modeling
+- Systematic exploration of meaning construction
+
+Unlike Esperanto, which includes diacritical markers and morphological irregularities, Ido's consistent morphosyntax allows deterministic tokenization and grammar rule enforcement without preprocessing requirements—presenting an optimal environment for algorithmic manipulation and large-scale textual generation.
+
+### 7.1 Broader Theoretical Implications
+
+The long-term research agenda aims to establish a scalable methodology for:
+
+- Designing linguistically valid sections of the conceptual Library of Babel
+- Generating semantic, grammatical, and contextually coherent texts through algorithmic means
+- Exploring the boundaries of meaning within constrained symbol spaces across constructed languages (Ido, Esperanto, Toki Pona, Lojban) and potentially natural languages
+
+This investigation opens avenues for diverse linguistic and computational research directions:
+
+- Formal complexity analysis of sentence structures across languages
+- Combinatorial language saturation: quantitative assessment of meaningfully generatable sentences under specific grammatical constraints
+- Development of semantic validation models using computational methods
+- Low-noise linguistic environments for testing AI generalization capabilities
+- Modeling emergent discourse properties from generative language systems
+- Visualization and exploration of linguistic phase spaces—the set of all grammatically possible outputs under given constraints
+
+This research establishes a methodological platform for linguistic experimentation at the intersection of human creativity, literary theory, and computational logic.
+
+---
+
+## 8. Bibliography
+
+- Borges, J. L. (1944). *Ficciones*. Buenos Aires: Editorial Sur.
+- Chomsky, N. (1957). *Syntactic Structures*. The Hague: Mouton.
+- De Beaufront, L. (1908). *Kompleta Gramatiko Detaloza di la Linguo Internaciona Ido*. Paris.
+- Eco, U. (1995). *The Search for the Perfect Language*. Oxford: Blackwell.
+- Janton, P. (1993). *Esperanto: Language, Literature, and Community*. Albany: SUNY Press.
+- Large, A. (1985). *The Artificial Language Movement*. Oxford: Blackwell.
+- Shannon, C.E. (1948). "A Mathematical Theory of Communication". *Bell System Technical Journal*, 27, 379-423.
+
+### Online Resources
+
+- [The Library of Babel — Full Text (English)](https://libraryofbabel.info/Borges.html)
+- [Universidad Tecnológica de Pereira](https://utp.edu.co)
+- [Ido Language Resources](https://en.wikipedia.org/wiki/Ido_language)
+- [International Auxiliary Languages Association Archives](https://archives.yale.edu/repositories/12/resources/3889)
+
+---
+
+*© 2025 Oscar Eduardo Bernal & Luis David Cardona* 
